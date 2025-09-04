@@ -919,6 +919,111 @@ class AccessibilityManager {
 }
 
 // ===================================
+// SECURITY MANAGER
+// ===================================
+
+class SecurityManager {
+  constructor() {
+    this.init();
+  }
+  
+  init() {
+    this.disableDevTools();
+    this.disableContextMenu();
+    this.disableKeyboardShortcuts();
+    this.disableTextSelection();
+    this.monitorDevTools();
+  }
+  
+  disableContextMenu() {
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+  }
+  
+  disableKeyboardShortcuts() {
+    document.addEventListener('keydown', function(e) {
+      // Disable F12 (Developer Tools)
+      if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+      }
+      
+      // Disable Ctrl+Shift+I (Inspect Element)
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+        return false;
+      }
+      
+      // Disable Ctrl+Shift+J (Console)
+      if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        e.preventDefault();
+        return false;
+      }
+      
+      // Disable Ctrl+U (View Source)
+      if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+        return false;
+      }
+      
+      // Disable Ctrl+Shift+C (Select Element)
+      if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+        e.preventDefault();
+        return false;
+      }
+      
+      // Disable Ctrl+S (Save Page)
+      if (e.ctrlKey && e.key === 's') {
+        e.preventDefault();
+        return false;
+      }
+    });
+  }
+  
+  disableTextSelection() {
+    document.addEventListener('selectstart', function(e) {
+      e.preventDefault();
+      return false;
+    });
+    
+    document.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    });
+  }
+  
+  disableDevTools() {
+    // Clear console periodically
+    setInterval(function() {
+      console.clear();
+    }, 1000);
+  }
+  
+  monitorDevTools() {
+    let devtools = {
+      open: false,
+      orientation: null
+    };
+    
+    const threshold = 160;
+    
+    setInterval(function() {
+      if (window.outerHeight - window.innerHeight > threshold || 
+          window.outerWidth - window.innerWidth > threshold) {
+        if (!devtools.open) {
+          devtools.open = true;
+          document.body.innerHTML = '<div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial; font-size: 24px; color: #333;">Developer tools are not allowed on this website.</div>';
+        }
+      } else {
+        devtools.open = false;
+      }
+    }, 500);
+  }
+}
+
+// ===================================
 // MAIN APPLICATION INITIALIZATION
 // ===================================
 
@@ -938,6 +1043,9 @@ class App {
   
   initializeComponents() {
     try {
+      // Initialize security first
+      this.securityManager = new SecurityManager();
+      
       // Initialize all components
       this.loadingManager = new LoadingManager();
       this.themeManager = new ThemeManager();
