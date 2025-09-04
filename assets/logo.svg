@@ -1,0 +1,30 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Lotus petals representing Ayurveda -->
+  <g transform="translate(20,20)">
+    <!-- Outer petals -->
+    <path d="M0,-15 C-3,-12 -6,-8 -8,-3 C-6,-5 -3,-7 0,-8 C3,-7 6,-5 8,-3 C6,-8 3,-12 0,-15Z" fill="#2E7D32" opacity="0.8"/>
+    <path d="M10.6,-10.6 C8.5,-8.5 7,-5.5 6.5,-2 C8,-3.5 10,-5 12,-6 C13.5,-4 14.5,-1.5 15,1 C15.5,-2.5 14,-6.5 10.6,-10.6Z" fill="#4CAF50" opacity="0.7"/>
+    <path d="M15,0 C12,0 9,-1 6.5,-2.5 C8,-4 10,-5.5 12,-6.5 C12,0 12,3 10.5,5.5 C13.5,4 15.5,2 15,0Z" fill="#66BB6A" opacity="0.6"/>
+    <path d="M10.6,10.6 C10.6,7.6 9.5,4.5 7.5,2 C9,3 11,4.5 12.5,6.5 C11,8.5 9,10 6.5,11 C8.5,12.5 10.6,12 10.6,10.6Z" fill="#81C784" opacity="0.5"/>
+    
+    <!-- Mirror for other sides -->
+    <path d="M0,15 C3,12 6,8 8,3 C6,5 3,7 0,8 C-3,7 -6,5 -8,3 C-6,8 -3,12 0,15Z" fill="#2E7D32" opacity="0.8"/>
+    <path d="M-10.6,10.6 C-8.5,8.5 -7,5.5 -6.5,2 C-8,3.5 -10,5 -12,6 C-13.5,4 -14.5,1.5 -15,-1 C-15.5,2.5 -14,6.5 -10.6,10.6Z" fill="#4CAF50" opacity="0.7"/>
+    <path d="M-15,0 C-12,0 -9,1 -6.5,2.5 C-8,4 -10,5.5 -12,6.5 C-12,0 -12,-3 -10.5,-5.5 C-13.5,-4 -15.5,-2 -15,0Z" fill="#66BB6A" opacity="0.6"/>
+    <path d="M-10.6,-10.6 C-10.6,-7.6 -9.5,-4.5 -7.5,-2 C-9,-3 -11,-4.5 -12.5,-6.5 C-11,-8.5 -9,-10 -6.5,-11 C-8.5,-12.5 -10.6,-12 -10.6,-10.6Z" fill="#81C784" opacity="0.5"/>
+    
+    <!-- Center circle representing unity -->
+    <circle cx="0" cy="0" r="4" fill="#FF8F00"/>
+    <circle cx="0" cy="0" r="2" fill="#FFF" opacity="0.9"/>
+    
+    <!-- Small decorative dots -->
+    <circle cx="0" cy="-6" r="1" fill="#FF8F00" opacity="0.8"/>
+    <circle cx="4.2" cy="-4.2" r="1" fill="#FF8F00" opacity="0.8"/>
+    <circle cx="6" cy="0" r="1" fill="#FF8F00" opacity="0.8"/>
+    <circle cx="4.2" cy="4.2" r="1" fill="#FF8F00" opacity="0.8"/>
+    <circle cx="0" cy="6" r="1" fill="#FF8F00" opacity="0.8"/>
+    <circle cx="-4.2" cy="4.2" r="1" fill="#FF8F00" opacity="0.8"/>
+    <circle cx="-6" cy="0" r="1" fill="#FF8F00" opacity="0.8"/>
+    <circle cx="-4.2" cy="-4.2" r="1" fill="#FF8F00" opacity="0.8"/>
+  </g>
+</svg>
